@@ -6,10 +6,10 @@ RUN apt-get update && \
     apt-get clean
 
 # Copy code to the web server directory
-COPY ./src /var/www/html
+COPY ./index.html /var/www/html/
 
-# Expose port 80 for the web server
-EXPOSE 80
+# Expose port 82 for the web server
+EXPOSE 82
 
 # Start Apache in the foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
