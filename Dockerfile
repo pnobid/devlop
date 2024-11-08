@@ -8,7 +8,7 @@ RUN apt-get update && \
 # Copy code to the web server directory
 COPY ./index.html /var/www/html/
 
-# Expose port 82 for the web server
+# Expose port 82 for the web server container
 EXPOSE 82
 
 # Start Apache in the foreground
