@@ -1,15 +1,12 @@
-FROM ubuntu:latest
-
-# Install Apache
-RUN apt-get update && \
-    apt-get install -y apache2 && \
-    apt-get clean
+FROM ubuntu 
+RUN apt update 
+RUN apt install –y apache2 
+RUN apt install –y apache2-utils 
+RUN apt clean 
+EXPOSE 82
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]
 
 # Copy code to the web server directory
 COPY ./index.html /var/www/html/
 
-# Expose port 82 for the web server container
-EXPOSE 82
 
-# Start Apache in the foreground
-CMD ["apachectl", "-D", "FOREGROUND"]
